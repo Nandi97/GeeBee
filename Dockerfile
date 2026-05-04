@@ -7,7 +7,7 @@ RUN corepack enable && corepack prepare pnpm@9 --activate
 # ── 2. Deps: install production + dev deps ────────────────────────────────────
 FROM base AS deps
 WORKDIR /app
-COPY package.json pnpm-lock.yaml pnpm-workspace.yaml ./
+COPY package.json pnpm-lock.yaml ./
 RUN pnpm install --frozen-lockfile
 
 # ── 3. Builder: compile the Next.js app ───────────────────────────────────────
