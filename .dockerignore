@@ -2,6 +2,7 @@
 .gitignore
 .next
 node_modules
+pnpm-workspace.yaml
 template
 *.md
 .env*.local
