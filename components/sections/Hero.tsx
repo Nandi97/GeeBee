@@ -36,17 +36,8 @@ export default function Hero() {
         <rect width="100%" height="100%" fill="url(#honeycomb)" />
       </svg>
 
-      <div
-        className="gb-container"
-        style={{
-          display: "grid",
-          gridTemplateColumns: "1.1fr 1fr",
-          gap: 64,
-          alignItems: "center",
-          padding: "96px 0 120px",
-          position: "relative",
-        }}
-      >
+      {/* two-column on desktop, single on mobile */}
+      <div className="gb-container gb-hero-grid">
         {/* Left — copy */}
         <div>
           <div style={{ display: "flex", alignItems: "center", gap: 14, marginBottom: 36 }}>
@@ -158,8 +149,9 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Right — jar */}
+        {/* Right — jar: hidden on mobile via .gb-hero-jar */}
         <div
+          className="gb-hero-jar"
           style={{
             position: "relative",
             display: "flex",
@@ -168,7 +160,6 @@ export default function Hero() {
             minHeight: 620,
           }}
         >
-          {/* warm glow behind jar */}
           <div
             style={{
               position: "absolute",
@@ -247,6 +238,7 @@ export default function Hero() {
         }}
       >
         <div
+          className="gb-hero-marquee"
           style={{
             display: "flex",
             gap: 56,

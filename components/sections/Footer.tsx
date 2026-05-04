@@ -18,11 +18,9 @@ export default function Footer() {
         borderTop: `1px solid ${p.line}`,
       }}
     >
-      <div
-        className="gb-container"
-        style={{ display: "grid", gridTemplateColumns: "2fr 1fr 1fr 1fr", gap: 48 }}
-      >
-        <div style={{ minWidth: 0 }}>
+      <div className="gb-container gb-footer-grid">
+        {/* brand: spans full width on mobile via .gb-footer-brand */}
+        <div className="gb-footer-brand" style={{ minWidth: 0 }}>
           <div
             style={{
               display: "flex",
@@ -104,6 +102,8 @@ export default function Footer() {
           borderTop: `1px solid ${p.line}`,
           display: "flex",
           justifyContent: "space-between",
+          flexWrap: "wrap",
+          gap: 8,
           fontFamily: "var(--font-inter), Inter, sans-serif",
           fontSize: 12,
           opacity: 0.6,

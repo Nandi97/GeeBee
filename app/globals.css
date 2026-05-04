@@ -4,19 +4,168 @@
   --display: 'Cormorant Garamond', serif;
 }
 
+/* ─── Container ──────────────────────────────────────────────────────────── */
 .gb-container {
   max-width: 1280px;
   margin: 0 auto;
   padding: 0 48px;
 }
 
+.gb-page {
+  background: #FAF6EC;
+  color: #0F2A21;
+  font-family: var(--font-inter), Inter, sans-serif;
+}
+
+/* ─── Animation ──────────────────────────────────────────────────────────── */
 @keyframes gb-marquee {
   from { transform: translateX(0); }
   to   { transform: translateX(-33.333%); }
 }
 
-.gb-page {
-  background: #FAF6EC;
-  color: #0F2A21;
-  font-family: var(--font-inter), Inter, sans-serif;
+/* ─── Layout classes (desktop-first) ─────────────────────────────────────── */
+
+.gb-nav-links { display: flex; }
+
+.gb-hero-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 64px;
+  align-items: center;
+  padding: 96px 0 120px;
+  position: relative;
+}
+
+.gb-about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.gb-process-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 72px;
+  gap: 40px;
+}
+
+.gb-process-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-top: 1px solid #E2D7B6;
+}
+
+.gb-products-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.gb-health-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 80px;
+  align-items: flex-start;
+}
+
+.gb-health-facts {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.gb-order-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 96px;
+  align-items: flex-start;
+}
+
+.gb-footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 48px;
+}
+
+.gb-stockist-row {
+  display: grid;
+  grid-template-columns: auto 1fr auto auto;
+  gap: 32px;
+  align-items: center;
+  padding: 26px 0;
+}
+
+.gb-form-row-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.gb-form-row-3 {
+  display: grid;
+  grid-template-columns: 1fr 100px 1fr;
+  gap: 24px;
+}
+
+/* ─── Responsive ─────────────────────────────────────────────────────────── */
+
+/* Tablet: collapse process to 2 cols */
+@media (max-width: 1024px) {
+  .gb-process-grid { grid-template-columns: repeat(2, 1fr); }
+  .gb-process-cell:nth-child(2) { border-right: none !important; }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .gb-container { padding: 0 20px; }
+
+  /* reduce section padding across the board */
+  section { padding-top: 72px !important; padding-bottom: 72px !important; }
+  footer  { padding-top: 48px !important; padding-bottom: 32px !important; }
+
+  /* Nav: hide links, keep logo + CTA */
+  .gb-nav-links { display: none; }
+
+  /* Hero */
+  .gb-hero-grid {
+    grid-template-columns: 1fr;
+    padding: 56px 0 64px;
+    gap: 0;
+  }
+  .gb-hero-jar { display: none !important; }
+  .gb-hero-marquee { font-size: 16px !important; }
+
+  /* About */
+  .gb-about-grid { grid-template-columns: 1fr; gap: 40px; }
+  .gb-about-photos { display: none !important; }
+
+  /* Process */
+  .gb-process-header { flex-direction: column; align-items: flex-start; margin-bottom: 40px; }
+  .gb-process-header-sub { display: none; }
+  .gb-process-grid { grid-template-columns: 1fr; }
+  .gb-process-cell { border-right: none !important; border-bottom: 1px solid #E2D7B6; }
+  .gb-process-cell:last-child { border-bottom: none; }
+
+  /* Products */
+  .gb-products-grid { grid-template-columns: 1fr; }
+
+  /* Health */
+  .gb-health-grid { grid-template-columns: 1fr; gap: 40px; }
+  .gb-health-facts { grid-template-columns: 1fr; }
+  .gb-health-fact  { border-right: none !important; padding-left: 0 !important; }
+
+  /* Stockists */
+  .gb-stockist-row { grid-template-columns: auto 1fr; gap: 16px; }
+  .gb-stockist-addr   { display: none; }
+  .gb-stockist-region { display: none; }
+
+  /* Order */
+  .gb-order-grid { grid-template-columns: 1fr; gap: 48px; }
+  .gb-form-row-2 { grid-template-columns: 1fr; }
+  .gb-form-row-3 { grid-template-columns: 1fr; }
+
+  /* Footer */
+  .gb-footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+  .gb-footer-brand { grid-column: 1 / -1; }
 }

@@ -56,9 +56,10 @@ export default function Nav() {
           </span>
         </Link>
 
+        {/* hidden on mobile via .gb-nav-links */}
         <div
+          className="gb-nav-links"
           style={{
-            display: "flex",
             gap: 28,
             fontFamily: "var(--font-inter), Inter, sans-serif",
             fontSize: 13,

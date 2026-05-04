@@ -19,7 +19,6 @@ export default function Health() {
         overflow: "hidden",
       }}
     >
-      {/* honeycomb bg */}
       <svg
         style={{ position: "absolute", inset: 0, width: "100%", height: "100%", opacity: 0.06 }}
         aria-hidden="true"
@@ -38,14 +37,7 @@ export default function Health() {
       </svg>
 
       <div className="gb-container" style={{ position: "relative" }}>
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "1fr 1.4fr",
-            gap: 80,
-            alignItems: "flex-start",
-          }}
-        >
+        <div className="gb-health-grid">
           <div>
             <Eyebrow color={p.deepAccent}>Why Raw</Eyebrow>
             <h2
@@ -76,10 +68,11 @@ export default function Health() {
             </p>
           </div>
 
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 0 }}>
+          <div className="gb-health-facts">
             {facts.map(([title, desc], i) => (
               <div
                 key={title}
+                className="gb-health-fact"
                 style={{
                   padding: "28px 28px 28px 0",
                   borderTop: "1px solid rgba(244,236,216,.18)",

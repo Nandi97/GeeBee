@@ -5,12 +5,10 @@ import { palette as p } from "@/lib/palette";
 export default function About() {
   return (
     <section id="the-farm" style={{ background: p.bg, color: p.ink, padding: "140px 0" }}>
-      <div
-        className="gb-container"
-        style={{ display: "grid", gridTemplateColumns: "1fr 1.1fr", gap: 80, alignItems: "center" }}
-      >
-        {/* Photo grid */}
+      <div className="gb-container gb-about-grid">
+        {/* Photo grid: hidden on mobile via .gb-about-photos */}
         <div
+          className="gb-about-photos"
           style={{
             display: "grid",
             gridTemplateColumns: "1.2fr 1fr",

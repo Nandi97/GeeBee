@@ -75,15 +75,7 @@ export default function Order() {
 
   return (
     <section id="order" style={{ background: p.deepBg, color: p.deepInk, padding: "140px 0" }}>
-      <div
-        className="gb-container"
-        style={{
-          display: "grid",
-          gridTemplateColumns: "1fr 1.2fr",
-          gap: 96,
-          alignItems: "flex-start",
-        }}
-      >
+      <div className="gb-container gb-order-grid">
         {/* Left — info */}
         <div>
           <Eyebrow color={p.deepAccent}>Order Direct</Eyebrow>
@@ -159,7 +151,7 @@ export default function Order() {
             </div>
           )}
 
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24 }}>
+          <div className="gb-form-row-2">
             <div>
               <div style={labelStyle}>Your name</div>
               <input
@@ -182,10 +174,10 @@ export default function Order() {
             </div>
           </div>
 
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 100px 1fr", gap: 24 }}>
+          <div className="gb-form-row-3">
             <div>
               <div style={labelStyle}>Jar size</div>
-              <select value={form.size} onChange={update("size")} style={selectArrow}>
+              <select aria-label="Jar size" value={form.size} onChange={update("size")} style={selectArrow}>
                 <option style={{ color: "#000" }}>250g</option>
                 <option style={{ color: "#000" }}>500g</option>
                 <option style={{ color: "#000" }}>1kg</option>
@@ -194,6 +186,7 @@ export default function Order() {
             <div>
               <div style={labelStyle}>Qty</div>
               <input
+                aria-label="Quantity"
                 type="number"
                 min="1"
                 value={form.qty}
@@ -203,7 +196,7 @@ export default function Order() {
             </div>
             <div>
               <div style={labelStyle}>Delivery area</div>
-              <select value={form.area} onChange={update("area")} style={selectArrow}>
+              <select aria-label="Delivery area" value={form.area} onChange={update("area")} style={selectArrow}>
                 <option style={{ color: "#000" }}>Nairobi</option>
                 <option style={{ color: "#000" }}>Eldoret · Pickup</option>
                 <option style={{ color: "#000" }}>Countrywide · Courier</option>

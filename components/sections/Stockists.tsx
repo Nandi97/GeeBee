@@ -57,14 +57,8 @@ export default function Stockists() {
           {places.map(([name, addr, region], i) => (
             <div
               key={name}
-              style={{
-                display: "grid",
-                gridTemplateColumns: "auto 1fr auto auto",
-                gap: 32,
-                alignItems: "center",
-                padding: "26px 0",
-                borderBottom: `1px solid ${p.line}`,
-              }}
+              className="gb-stockist-row"
+              style={{ borderBottom: `1px solid ${p.line}` }}
             >
               <span
                 style={{
@@ -87,7 +81,9 @@ export default function Stockists() {
               >
                 {name}
               </span>
+              {/* hidden on mobile */}
               <span
+                className="gb-stockist-addr"
                 style={{
                   fontFamily: "var(--font-inter), Inter, sans-serif",
                   fontSize: 14,
@@ -97,6 +93,7 @@ export default function Stockists() {
                 {addr}
               </span>
               <span
+                className="gb-stockist-region"
                 style={{
                   fontFamily: "var(--font-inter), Inter, sans-serif",
                   fontSize: 11,

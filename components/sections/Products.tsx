@@ -53,7 +53,7 @@ export default function Products() {
           </h2>
         </div>
 
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 24 }}>
+        <div className="gb-products-grid">
           {items.map((it) => (
             <article
               key={it.size}

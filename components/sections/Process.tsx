@@ -13,15 +13,7 @@ export default function Process() {
   return (
     <section id="process" style={{ background: p.paper, color: p.ink, padding: "140px 0", position: "relative" }}>
       <div className="gb-container">
-        <div
-          style={{
-            display: "flex",
-            alignItems: "flex-end",
-            justifyContent: "space-between",
-            marginBottom: 72,
-            gap: 40,
-          }}
-        >
+        <div className="gb-process-header">
           <div>
             <Eyebrow color={p.gold}>How It&apos;s Made</Eyebrow>
             <h2
@@ -38,7 +30,9 @@ export default function Process() {
               Four steps. <em style={{ fontStyle: "italic", color: p.gold }}>No shortcuts.</em>
             </h2>
           </div>
+          {/* hidden on mobile via .gb-process-header-sub */}
           <p
+            className="gb-process-header-sub"
             style={{
               fontFamily: "var(--font-inter), Inter, sans-serif",
               fontSize: 14,
@@ -52,17 +46,11 @@ export default function Process() {
           </p>
         </div>
 
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(4, 1fr)",
-            gap: 0,
-            borderTop: `1px solid ${p.line}`,
-          }}
-        >
+        <div className="gb-process-grid">
           {steps.map(([n, title, desc], i) => (
             <div
               key={n}
+              className="gb-process-cell"
               style={{
                 padding: "32px 28px 36px",
                 borderRight: i < steps.length - 1 ? `1px solid ${p.line}` : "none",
